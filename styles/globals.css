@@ -33,3 +33,23 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+.img {
+  opacity: .3;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: -200px;
+}
+
+.header-title{
+  position: fixed;
+  top: 0;
+  font-size: 3em;
+  color: #414141;
+}
+
+.description {
+  width: 700px;
+  margin: 30px auto;
+}
