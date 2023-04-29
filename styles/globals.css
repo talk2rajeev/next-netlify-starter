@@ -4,34 +4,20 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    text-align: center;
 }
 
 * {
   box-sizing: border-box;
 }
 
-main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+main, .container {
+  display: block;
+  width: 100%;
 }
 
-code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
-}
-
-.container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.bg-image {
+  text-align: center;
 }
 
 .img {
@@ -42,14 +28,43 @@ code {
   top: -200px;
 }
 
-.header-title{
-  position: fixed;
-  top: 0;
-  font-size: 3em;
-  color: #414141;
-}
-
 .description {
   width: 700px;
   margin: 30px auto;
+}
+
+.team_logo {
+  width: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    background-image: url(/images/raodies_color_snipped.png);
+    width: 100%;
+    display: block;
+    height: 100vh;
+    background-repeat: repeat;
+    background-position: 47% center;
+    background-color: #fff;
+    opacity: .9;
+  }
+  .team_logo {
+    opacity: .7;
+    width: 150px;
+    border-radius: 42%;
+  }
+  .img{
+    display: none;
+  }
+  .description {
+    text-shadow: 0px 0px 2px #000;
+    width: 100%;
+    color: #fff;
+  }
+  a {
+    color: #0099ff;
+  }
+  .link {
+    font-size: 1.2em;
+  }
 }
