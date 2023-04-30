@@ -5,6 +5,8 @@ import Footer from '@components/Footer'
 
 export default function Home() {
   const [bgImage, setBgImage] = useState(0);
+  const [styles, setStyles] = useState({});
+
   const brImgArr = ['/images/roadies_whites.jpg', '/images/raodies_color_snipped.png'];
   let timer;
   
@@ -23,6 +25,16 @@ export default function Home() {
     }, 6000)
   }
 
+  let isMobileView ;
+  
+  useEffect(() => {
+    // window is accessible here.
+    isMobileView = window.innerWidth < 600;
+    isMobileView ? setStyles({backgroundImage:  `url(${brImgArr[bgImage]})`}) : {};
+    console.log('isMobileView', isMobileView, styles);
+  }, [bgImage]);
+
+
   return (
     <div >
       <Head>
@@ -30,7 +42,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className="container"> 
+      <div className="container" style={styles}> 
 
         <div className='bg-image'>
           <img className='img' src={brImgArr[bgImage]} style={{width: '100%'}} />
@@ -70,6 +82,7 @@ export default function Home() {
           <div className="description link">
             Please fill this <a href='https://forms.gle/uvCorjkWsHW7tggj7' target='_blank'>form</a> to send a request to us.
           </div>
+          <div style={{height: '30px', padding: '10px'}}></div>
         </div>
       </div>
 
