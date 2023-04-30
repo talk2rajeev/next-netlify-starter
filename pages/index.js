@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
 
 export default function Home() {
   const [bgImage, setBgImage] = useState(0);
